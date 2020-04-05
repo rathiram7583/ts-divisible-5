@@ -1,9 +1,18 @@
-function divisible(value) {
-    if ((value % 5) == 0) {
-        console.log("The number " + value + " divisible by 5");
+var DivisibleByFive = /** @class */ (function () {
+    function DivisibleByFive(value) {
+        this.value = value;
     }
-    else {
-        console.log("The number " + value + "is not divisible by 5");
-    }
-}
-divisible(13);
+    DivisibleByFive.prototype.divisibleFive = function () {
+        if ((this.value % 5) == 0) {
+            console.log("The number " + this.value + " divisible by 5");
+            window.document.body.textContent += this.value + " \"Is Divisible by 5\"";
+        }
+        else {
+            console.log("The number " + this.value + "is not divisible by 5");
+            window.document.body.textContent += this.value + " \"Is not Divisible by 5 \"";
+        }
+    };
+    return DivisibleByFive;
+}());
+var divisible = new DivisibleByFive(20);
+divisible.divisibleFive();

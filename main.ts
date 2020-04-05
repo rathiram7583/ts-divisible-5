@@ -1,15 +1,27 @@
-function divisible(value:number)
+class DivisibleByFive
 {
-    if((value%5)==0)
+    value:number;
+    constructor(value:number)
+    {
+        this.value=value;
+    }
+    divisibleFive()
+    {
+    if((this.value%5)==0)
        {
-        console.log("The number "+value+" divisible by 5" );
+        console.log("The number "+this.value+" divisible by 5" );
+        window.document.body.textContent +=`${this.value} "Is Divisible by 5"`;
         }
     else{
-        console.log("The number "+value+ "is not divisible by 5");
+        console.log("The number "+this.value+ "is not divisible by 5");
+        window.document.body.textContent +=`${this.value} "Is not Divisible by 5 "`;
+
         }
 
+    }
 }
 
-divisible(13);
+var divisible=new DivisibleByFive(20);
+divisible.divisibleFive();
 
 
